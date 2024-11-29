@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            margin: 60px;
+
+        }
+        .nome{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+        }
+        .nome> #nomeSegunda{
+            text-decoration: underline;
+            font-size: 45px;
+            text-transform: uppercase;
+            
+        }
+        label{
+            background-color: rgba(255, 127, 148, 0.137);
+            cursor: pointer;
+            border-radius: 20px;
+            width: 400px;
+            margin: auto;
+        }
+        label:hover{
+            background-color: rgba(255, 127, 148, 0.5);
+            cursor: pointer;
+            border-radius: 20px;
+            width: 400px;
+            margin: auto;
+        }
+        .nome{
+            background-color: rgba(11, 100, 45, 0.61);
+            width: 100%;
+            border-radius: 20px;
+
+        }
+        #perguntas{
+            border-radius: 20px;
+            border: solid green ;
+        }
+
+        #imgr{
+            width: 500px;
+            height: 500px;
+            background-size: cover;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="perguntas">
+        <div class="nome">
+        <h1>Bem-Vindo(a) </h1>
+        <h1 id="nomeSegunda"></h1>
+    </div>
+        <h1></h1>
+    <script>
+        let h1 = document.getElementById("nomeSegunda")
+        let nome = localStorage.getItem("nomeSalvo")
+        h1.innerHTML = nome
+    </script>
+    <script src="script.js"></script>
+        <div id="pergunta">
+            <h1>Qual a principal cor do natal?</h1>
+            <div id="imagem_coquette"></div>
+            <label> <input type="radio" name="p1" class="radio" value="bela">Amarelo</label>
+            <label> <input type="radio" name="p1" class="radio" value="branca">Vermelho</label>
+            <label> <input type="radio" name="p1" class="radio" value="frozen">Azul</label>
+            <label> <input type="radio" name="p1" class="radio" value="vanellope">Preto</label>
+        </div>
+        <div id="pergunta">
+            <h1>Qual seu feriado favorito?</h1>
+            <div id="imagem_frozi"></div>
+            <label> <input type="radio" name="p2" class="radio" value="bela">Pascoa</label>
+            <label> <input type="radio" name="p2" class="radio" value="branca">Natal</label>
+            <label> <input type="radio" name="p2" class="radio" value="frozen">Dia da Consciencia Negra</label>
+            <label> <input type="radio" name="p2" class="radio" value="vanellope">Dia da Independencia</label>
+        </div>
+        <div id="pergunta">
+            <h1>Qual seu personagem favorito do natal?</h1>
+            <div id="imagem_branca"></div>
+            <label> <input type="radio" name="p3" class="radio" value="bela">Rena</label>
+            <label> <input type="radio" name="p3" class="radio" value="branca">Papai noel</label>
+            <label> <input type="radio" name="p3" class="radio" value="frozen">Aqueles anão</label>
+            <label> <input type="radio" name="p3" class="radio" value="vanellope">Grinch</label>
+        </div>
+        <div id="pergunta">
+            <h1>Qual sua comida favorita do natal?</h1>
+            <div id="imagem_venellope"></div>
+            <label> <input type="radio" name="p4" class="radio" value="bela">Uva passa</label>
+            <label> <input type="radio" name="p4" class="radio" value="branca">Piru</label>
+            <label> <input type="radio" name="p4" class="radio" value="frozen">Pavê</label>
+            <label> <input type="radio" name="p4" class="radio" value="vanellope">Carne de porco</label>
+        </div>
+        <br>
+        <br>
+        <button class="btn" onclick="ContarVotos()">Qual personagem do natal vc seria</button>
+        <br>
+        <br>
+        <h1 id="bela"></h1>
+        <h1 id="branca"></h1>
+        <h1 id="frozen"></h1>
+        <h1 id="vanellope"></h1>
+        <h1 id="resultadoFinal"></h1>
+        <div id="imgr"></div>
+    </div>
+    <script>
+        function ContarVotos(){
+            //criando contadores
+            let contBela = 0;
+            let ContBranca = 0;
+            let ContFrozen = 0;
+            let ContVanellope = 0;
+
+            //obter is radios da classe radios
+            let radio = document.getElementsByClassName('radio')
+
+            //percorrendo todos os elementos redios
+            for(let i=0; i < radio.length; i++){
+                //testar qual radio esta selecionado
+                if(radio[i].checked){
+                    if(radio[i].value == "bela"){
+                        contBela++
+                    }else if(radio[i].value == "branca"){
+                        ContBranca++
+                    } else if(radio[i].value == "frozen"){
+                        ContFrozen++
+                    }else{
+                        ContVanellope++
+                    }
+                }
+            }
+            
+            //colocando contadores nos h1
+            document.getElementById('bela').innerHTML 
+            document.getElementById('branca').innerHTML 
+            document.getElementById('frozen').innerHTML 
+            document.getElementById('vanellope').innerHTML 
+           
+            //mostrando do resultado final
+            let resultado = document.getElementById('resultadoFinal')
+
+            let img = document.getElementById('imgr')
+        
+            if (contBela > ContBranca && contBela > ContFrozen && contBela > ContVanellope){
+                resultado.innerHTML = "Você é a Rena 😂 - Chifrudo"
+
+                img.style.backgroundImage = "url(https://img.myloview.com.br/fotomurais/pinguim-3d-adora-se-vestir-como-uma-rena-no-natal-400-22083162.jpg)"
+                //redirecionando para uma pagina
+                
+            } else if(ContBranca > ContFrozen && ContBranca > ContVanellope){
+                resultado.innerHTML = "Você é o Napai Poel 😎"
+                
+               img.style.backgroundImage = "url(https://conteudo.imguol.com.br/c/entretenimento/45/2018/12/14/envie-um-meme-engracado-para-o-bol-11-97335-6855-1544793654374_v2_300x300.jpg.webp)"
+                    
+            } else if(ContFrozen > ContVanellope){
+                resultado.innerHTML = "Você é o Elfo 😐"
+                
+                img.style.backgroundImage = "url(https://i.pinimg.com/474x/f0/c3/d7/f0c3d7de67e0643182bae6969e9a301f.jpg)"
+                    
+            } else{
+                resultado.innerHTML = "Você é o Grinch 🙄"
+                
+                img.style.backgroundImage = "url(https://content.imageresizer.com/images/memes/Blue-Grinch-meme-8izcah.jpg)"
+            }
+ 
+            localStorage.setItem('contBela', contBela)
+            localStorage.setItem('ContBranca', ContBranca)
+            localStorage.setItem('ContFrozen', ContFrozen)
+            localStorage.setItem('ContVanellope', ContVanellope)
+ 
+           
+        }
+    </script>
+</body>
+</html>

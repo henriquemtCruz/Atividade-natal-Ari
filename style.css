@@ -1,0 +1,129 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+    -webkit-animation: rainbow 10s ease infinite;
+    -o-animation: rainbow 10s ease infinite;
+    animation: rainbow 10s ease infinite;}
+
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+#perguntas{
+    border: white 2px solid;
+    padding: 30px;
+    margin: 5px;
+    width: 70%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    background-image: url(https://img.freepik.com/vetores-premium/projeto-de-banner-vazio-de-natal-ramos-de-arvore-de-natal-e-composicao-de-decoracao-de-ouro-vetor-eps10_202497-1478.jpg);
+    background-size: contain;
+}
+#pergunta{
+    flex-direction: column;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    gap: 10px;
+
+}
+#imagem_coquette{
+    width: 65vh;
+    height: 40vh;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuv998kaY6GoKFKkp0snHIhO256-Kq3QD8gw&s);
+    background-size: 100% 100%;
+    border: white 2px solid;
+    border-radius: 13px;
+}
+#imagem_frozi{
+    width: 65vh;
+    height: 40vh;
+    background-image: url(https://i.pinimg.com/200x150/25/f1/9d/25f19d59fb7891788ee6169c6155fe3f.jpg);
+    background-size: 100% 120%;
+    border: white 2px solid;
+    border-radius: 13px;
+}
+#imagem_branca{
+    width: 65vh;
+    height: 40vh;
+    background-image: url(https://s2-techtudo.glbimg.com/-322PYecapapV-SflR7FV4zq0is=/0x0:1200x800/984x0/smart/filters:strip_icc/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/T/1/NAoQZYT1Sv4hMx4pi2yA/natal.png);
+    background-size: 100% 100%;
+    border: white 2px solid;
+    border-radius: 13px;
+}
+#imagem_venellope{
+    width: 65vh;
+    height: 40vh;
+    background-image: url(https://i.pinimg.com/736x/e5/ce/1d/e5ce1d366e51a4e79a5a24438ab1283e.jpg);
+    background-size: 100% 120%;
+    border: white 2px solid;
+    border-radius: 13px;
+}
+label{
+    font-size: 23px;
+}
+#resultadoFinal{
+    font-size: 40px;
+    color: pink;
+    text-align: center;
+}
+
+
+.btn {
+    width: 240px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: red;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.btn:hover{
+    background: rgb(216, 33, 33);
+    width: 245px;
+    height: 55px;
+}
+
+
+
+
+
